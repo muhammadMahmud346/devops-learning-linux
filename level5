@@ -1,0 +1,51 @@
+#level 5 The password for the next level is stored in the only human-readable file in the inhere directory. Tip: if your terminal is messed up, try the “reset” command.
+
+
+
+bandit4@bandit:~$ ls -la
+
+drwxr-xr-x   2 root root 4096 Jun 24 14:59 inhere
+bandit4@bandit:~$ cd inhere
+bandit4@bandit:~/inhere$ ls -la
+
+-rw-r----- 1 bandit5 bandit4   33 Jun 24 14:59 -file00
+-rw-r----- 1 bandit5 bandit4   33 Jun 24 14:59 -file01
+-rw-r----- 1 bandit5 bandit4   33 Jun 24 14:59 -file02
+-rw-r----- 1 bandit5 bandit4   33 Jun 24 14:59 -file03
+-rw-r----- 1 bandit5 bandit4   33 Jun 24 14:59 -file04
+-rw-r----- 1 bandit5 bandit4   33 Jun 24 14:59 -file05
+-rw-r----- 1 bandit5 bandit4   33 Jun 24 14:59 -file06
+-rw-r----- 1 bandit5 bandit4   33 Jun 24 14:59 -file07
+-rw-r----- 1 bandit5 bandit4   33 Jun 24 14:59 -file08
+-rw-r----- 1 bandit5 bandit4   33 Jun 24 14:59 -file09
+
+bandit4@bandit:~/inhere$ find .
+.
+./-file06
+./-file09
+./-file01
+./-file08
+./-file00
+./-file03
+./-file07
+./-file02
+./-file05
+./-file04
+bandit4@bandit:~/inhere$ file ./-file06
+./-file06: Non-ISO extended-ASCII text, with NEL line terminators
+bandit4@bandit:~/inhere$ file ./-file01
+./-file01: data
+bandit4@bandit:~/inhere$ file ./-file02
+./-file02: OpenPGP Secret Key
+bandit4@bandit:~/inhere$ file ./-file03
+./-file03: data
+bandit4@bandit:~/inhere$ file ./-file04
+./-file04: data
+bandit4@bandit:~/inhere$ file ./-file05
+./-file05: data
+bandit4@bandit:~/inhere$ file ./-file06
+./-file06: Non-ISO extended-ASCII text, with NEL line terminators
+bandit4@bandit:~/inhere$ file ./-file07
+./-file07: ASCII text
+bandit4@bandit:~/inhere$ cat ./-file07
+6C7h9GD8M6ai5nr7wo1RonrzFjj9yIr
