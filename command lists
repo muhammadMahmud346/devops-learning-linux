@@ -4,3 +4,9 @@ pwd
 cd
 cat
 touch
+grep
+man
+head
+tail
+sudo
+whoami
