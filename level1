@@ -1,0 +1,13 @@
+#Bandit level 1 The password for the next level is stored in a file called - located in the home directory
+
+bandit0@bandit:~$ ls -la
+total 24
+-rw-r-----   1 bandit1 bandit0  438 Jun 24 14:58 readme
+bandit0@bandit:~$ ls
+readme
+bandit0@bandit:~$ cat readme
+
+
+The password you are looking for is: 6y2kwnwK6grgvwvpvLaa2T1cpFEKOhNR
+
+bandit0@bandit:~$
