@@ -1,0 +1,22 @@
+# Task 3 create a script and manage permissions
+
+ touch hello.sh
+❯ vim hello.sh
+echo '#!/bin/bash\necho "Hello DevOps"' > hello.sh
+❯ cat hello.sh
+echo '#!/bin/bash\necho "Hello DevOps"' > hello.sh
+❯ chmod +x hello.sh
+❯ ls -la
+-rwxr-xr-x  1 abstract    abstract     52 Aug 15 14:31  hello.sh
+ sudo chown root:root hello.sh
+[sudo] password for abstract:
+❯ sudo chown root:root hello.sh
+❯ ls -la
+-rwxr-xr-x  1 root        root         52 Aug 15 14:31  hello.sh
+
+#Challenge
+
+❯ touch Task3
+❯ chmod 644 Task3
+❯ ls -la
+-rw-r--r--  1 abstract    abstract      0 Aug 15 14:37  Task3
