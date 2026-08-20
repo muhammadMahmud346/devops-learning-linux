@@ -1,0 +1,40 @@
+#Grep
+
+❯❯ cat servers.txt
+❯ nano servers.txt
+❯ cat servers.txt
+web01-running
+db01-running
+web02-stopped
+cash01-running
+db02-failed
+web03-running
+❯ grep running servers.txt
+web01-running
+db01-running
+cash01-running
+web03-running
+❯ grep failed servers.txt
+db02-failed
+❯ nano servers.txt
+❯ nano servers.txt
+❯ grep RUNNING servers.txt
+web03-RUNNING
+❯ grep running servers.txt
+web01-running
+db01-running
+cash01-running
+❯ grep -i running servers.txt
+web01-running
+db01-running
+cash01-running
+web03-RUNNING
+❯ cat servers.txt | grep running
+web01-running
+db01-running
+cash01-running
+❯ cat servers.txt | grep -i running
+web01-running
+db01-running
+cash01-running
+web03-RUNNIN
