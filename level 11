@@ -1,0 +1,18 @@
+#The password for the next level is stored in the file data.txt, where all lowercase (a-z) and uppercase (A-Z) letters have been rotated by 13 positions
+
+
+bandit11@bandit:~$ ls -la
+total 24
+drwxr-xr-x   2 root     root     4096 Jun 24 14:58 .
+drwxr-xr-x 150 root     root     4096 Jun 24 15:02 ..
+-rw-r--r--   1 root     root      220 Feb 13  2026 .bash_logout
+-rw-r--r--   1 root     root     3851 Jun 24 14:50 .bashrc
+-rw-r--r--   1 root     root      807 Feb 13  2026 .profile
+-rw-r-----   1 bandit12 bandit11   49 Jun 24 14:58 data.txt
+bandit11@bandit:~$ cat data.txt
+bandit11@bandit:~$ cat data.txt | tr 'A-Za-z' 'N-ZA-Mn-za-m'
+The password is GROozWPO8QyN0mGrjUkID0WCYkZiQxrN
+
+# the tr command to translate characters, we tell tr which characters to look for, first set is all letters upper and lowercase, second set is the same letters sigfted by 13 letters by the ROT13 mapping. 
+
+#with those 2 sets tr knows what to look for and what to swap them with, decods rot13 text into english. 
