@@ -331,3 +331,6 @@ bandit12@bandit:/tmp/mo12$ file data8
 data8: ASCII text
 bandit12@bandit:/tmp/mo12$ cat data8
 The password is qQYQiHOBPR8zR61qxYqX45quvihF2uzk
+
+
+# we started with data.txt and we didnt know the answe. 
