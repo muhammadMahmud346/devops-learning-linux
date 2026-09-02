@@ -1,0 +1,27 @@
+#There is a setuid binary in the homedirectory that does the following: it makes a connection to localhost on the port you specify as a commandline argument. It then reads a line of text from the connection and compares it to the password in the previous level (bandit20). If the password is correct, it will transmit the password for the next level (bandit21).
+
+#NOTE: Try connecting to your own network daemon to see if it works as you think
+
+#open two terminals 
+
+bandit20@bandit:~$ ./suconnect 4444
+Read: 4pIjcunZ0fK2vmp3IwfG8Vf7VhxD6pOA
+Password matches, sending next password
+bandit20@bandit:~$
+
+
+bandit20@bandit:~$ echo "4pIjcunZ0fK2vmp3IwfG8Vf7VhxD6pOA" | nc -lvp 4444
+Listening on 0.0.0.0 4444
+Connection received on localhost 57914
+bW9kBv5WC3P4yoDyf12LSdGuNz5ka6hY
+bandit20@bandit:~$
+
+claudes notes
+
+The handshake, in order:
+
+Terminal A: echo "<bandit20 password>" | nc -lvp 4444 — opens a listening socket on port 4444, with the password already queued up as the data to send once someone connects.
+Terminal B: ./suconnect 4444 — connects to localhost:4444 (reaching terminal A's nc), and starts reading whatever comes down that socket.
+The moment the connection is made, nc flushes its piped input (the password) across the wire.
+suconnect reads that line, checks it against bandit20's real password, finds a match, and — using its setuid-borrowed bandit21 identity — reads /etc/bandit_pass/bandit21 and writes it back over the same open socket.
+nc in terminal A, which is bidirectional, prints whatever it receives back — and that's the bandit21 password showing up in terminal A's output
